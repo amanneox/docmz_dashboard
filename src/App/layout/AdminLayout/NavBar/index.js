@@ -6,7 +6,6 @@ import NavRight from "./NavRight";
 import Aux from "../../../../hoc/_Aux";
 import DEMO from "../../../../store/constant";
 import * as actionTypes from "../../../../store/actions";
-
 class NavBar extends Component {
     render() {
         let headerClass = ['navbar', 'pcoded-header', 'navbar-expand-lg', this.props.headerBackColor];
@@ -28,7 +27,7 @@ class NavBar extends Component {
                             <div className="b-bg">
                                 <i className="feather icon-trending-up"/>
                             </div>
-                            <span className="b-title">Datta Able</span>
+                            <span className="b-title">Docmz</span>
                         </a>
                     </div>
                     <a className="mobile-menu" id="mobile-header" href={DEMO.BLANK_LINK}><i className="feather icon-more-horizontal"/></a>
@@ -44,10 +43,10 @@ class NavBar extends Component {
 
 const mapStateToProps = state => {
     return {
-        rtlLayout: state.rtlLayout,
-        headerBackColor: state.headerBackColor,
-        headerFixedLayout: state.headerFixedLayout,
-        collapseMenu: state.collapseMenu
+        rtlLayout: state.extra.rtlLayout,
+        headerBackColor: state.extra.headerBackColor,
+        headerFixedLayout: state.extra.headerFixedLayout,
+        collapseMenu: state.extra.collapseMenu
     }
 };
 

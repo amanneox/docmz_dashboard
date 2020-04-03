@@ -1,14 +1,16 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
-
+import { connect } from 'react-redux';
 import '../assets/scss/style.scss';
 import Aux from "../hoc/_Aux";
 import Breadcrumb from "../App/layout/AdminLayout/Breadcrumb";
 import DEMO from "../store/constant";
-import { userService } from '../services'
-class Registration extends React.Component {
+import {Spinner} from 'react-bootstrap'
+import { userActions } from '../store/actions';
+class RegisterPage extends React.Component {
   constructor(props){
     super(props)
+    this.props.logout();
     this.state = {
       loading: false,
       email:'',
@@ -37,14 +39,14 @@ handleEmail(event){
             email:this.state.email,
             number:this.state.number,
           }
-            console.log(payload);
-            userService.register(payload).then(res =>{
-              console.log(res)
-            })
-
+            this.props.register(payload)
       }
 
     render () {
+      const error = {
+        color: 'red'
+      }
+      const { registering , alert  } = this.props;
         return(
             <Aux>
                 <Breadcrumb/>
@@ -79,7 +81,17 @@ handleEmail(event){
                                     </div>
                                 </div>
                                 <button onClick={this.handleClick} className="btn btn-primary shadow-2 mb-4">Sign up</button>
-                                <p className="mb-0 text-muted">Allready have an account? <NavLink to="/auth/signin-1">Login</NavLink></p>
+                                {
+                                  registering &&
+                                  <Spinner animation="border" role="status">
+                                  <span className="sr-only">Loading...</span>
+                                  </Spinner>
+                                }
+                                {
+                                  alert &&
+                                  <p style={error} className="error">{alert.message}</p>
+                                }
+                                <p className="mb-0 text-muted">Allready have an account? <NavLink to="/login">Login</NavLink></p>
                             </div>
                         </div>
                     </div>
@@ -88,5 +100,18 @@ handleEmail(event){
         );
     }
 }
+
+function mapState(state) {
+  const { registering } = state.registration;
+    const { alert } = state;
+    return { registering, alert };
+}
+
+const actionCreators = {
+    register: userActions.register,
+    logout: userActions.logout
+};
+
+const Registration = connect(mapState, actionCreators)(RegisterPage);
 
 export default Registration;

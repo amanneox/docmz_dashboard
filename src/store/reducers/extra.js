@@ -11,7 +11,7 @@ const initialState = {
 export function extra(state = initialState, action) {
     let trigger = [];
     let open = [];
-
+    console.log(action);
     switch (action.type) {
         case actionTypes.COLLAPSE_MENU:
             return {

@@ -49,6 +49,7 @@ async function login (email, password) {
   }
 try {
   const res = await API.post('user/signin', requestOptions)
+      console.log(res);
       if (res.data.token) {
         sessionStorage.setItem('docmz_user', JSON.stringify(res.data))
         }

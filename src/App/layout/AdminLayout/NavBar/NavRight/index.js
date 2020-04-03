@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Dropdown} from 'react-bootstrap';
-
+import {NavLink} from 'react-router-dom';
 import ChatList from './ChatList';
 import Aux from "../../../../../hoc/_Aux";
 import DEMO from "../../../../../store/constant";
@@ -87,10 +87,10 @@ class NavRight extends Component {
                             <Dropdown.Menu alignRight className="profile-notification">
                                 <div className="pro-head">
                                     <img src={Avatar1} className="img-radius" alt="User Profile"/>
-                                    <span>John Doe</span>
-                                    <a href={DEMO.BLANK_LINK} className="dud-logout" title="Logout">
+                                    <span>User Name</span>
+                                    <NavLink to='/login' className="dud-logout" title="Logout">
                                         <i className="feather icon-log-out"/>
-                                    </a>
+                                    </NavLink>
                                 </div>
                                 <ul className="pro-body">
                                     <li><a href={DEMO.BLANK_LINK} className="dropdown-item"><i className="feather icon-settings"/> Settings</a></li>

@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {Provider} from 'react-redux';
-import {BrowserRouter} from 'react-router-dom';
-
+import {Router} from 'react-router-dom';
+import { history } from './store/helpers';
 import App from './App/index';
 import * as serviceWorker from './serviceWorker';
 
@@ -12,10 +12,10 @@ import { store } from './store/helpers'
 
 const app = (
     <Provider store={store}>
-        <BrowserRouter basename={config.basename}>
+        <Router history={history} basename={config.basename}>
             {/* basename="/datta-able" */}
             <App />
-        </BrowserRouter>
+        </Router>
     </Provider>
 );
 

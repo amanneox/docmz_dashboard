@@ -1,6 +1,5 @@
 import React, { Component, Suspense } from 'react';
-import { Router, Route, Switch, Redirect } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
 import { PrivateRoute } from '../_components';
 import Loadable from 'react-loadable';
 

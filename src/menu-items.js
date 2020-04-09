@@ -35,40 +35,46 @@ export default {
                     icon: 'feather icon-box',
                     children: [
                         {
-                            id: 'button',
-                            title: 'Button',
+                            id: 'header',
+                            title: 'Header',
                             type: 'item',
-                            url: '/basic/button'
+                            url: '/page/header'
                         },
                         {
-                            id: 'badges',
-                            title: 'Badges',
+                            id: 'footer',
+                            title: 'Footer',
                             type: 'item',
-                            url: '/basic/badges'
+                            url: '/page/footer'
                         },
                         {
-                            id: 'breadcrumb-pagination',
-                            title: 'Breadcrumb & Pagination',
+                            id: 'home',
+                            title: 'Home',
                             type: 'item',
-                            url: '/basic/breadcrumb-paging'
+                            url: '/page/home'
                         },
                         {
-                            id: 'collapse',
-                            title: 'Collapse',
+                            id: 'Howitworks',
+                            title: 'How-It-Works',
                             type: 'item',
-                            url: '/basic/collapse'
+                            url: '/page/howitworks'
                         },
                         {
-                            id: 'tabs-pills',
-                            title: 'Tabs & Pills',
+                            id: 'join',
+                            title: 'Join',
                             type: 'item',
-                            url: '/basic/tabs-pills'
+                            url: '/page/join'
                         },
                         {
-                            id: 'typography',
-                            title: 'Typography',
+                            id: 'contact',
+                            title: 'Contact',
                             type: 'item',
-                            url: '/basic/typography'
+                            url: '/page/contact'
+                        },
+                        {
+                            id: 'login',
+                            title: 'Login',
+                            type: 'item',
+                            url: '/page/login'
                         }
                     ]
                 }

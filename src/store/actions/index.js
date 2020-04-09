@@ -1,5 +1,7 @@
 export * from './alert.actions';
 export * from './user.actions';
+export * from './header.actions'
+export * from './footer.actions'
 export const COLLAPSE_MENU = 'COLLAPSE_MENU';
 export const COLLAPSE_TOGGLE = 'COLLAPSE_TOGGLE';
 export const FULL_SCREEN = 'FULL_SCREEN';
